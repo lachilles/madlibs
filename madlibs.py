@@ -10,7 +10,8 @@ app = Flask(__name__)
 AWESOMENESS = [
     'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza', 'oh-so-not-meh',
     'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
-
+# MADLIBS = ["madlib.html", "madlib2.html", "madlib3.html"]
+# list of madlib templates
 
 @app.route('/')
 def start_here():
@@ -61,9 +62,13 @@ def show_madlib():
     classmate = request.args.get("classmate")
     day = request.args.get("day")
 
+    # template = choice(MADLIBS)  #generates a random template from MADLIBS list
+
     return render_template("madlib.html", color=color, noun=noun, 
         adjective=adjective, classmate=classmate, day=day)
 
+    # return render_template(template, color=color, noun=noun, adjective=adjective, classmate=classmate, day=day)  
+        #would return a random template from MADLIBS
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app
