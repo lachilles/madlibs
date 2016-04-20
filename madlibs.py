@@ -54,6 +54,7 @@ def show_game_form():
 def show_madlib():
     """Show mad lib"""
 
+    # getting user input and binding it to a variable
     color = request.args.get("color")
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
